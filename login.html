@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./output/tailwind.css">
+</head>
+<body class="bg-slate-300 h-screen flex justify-around items-center flex-wrap">
+    <img class="w-80 gap-6 rounded-md" src="./img/Happy Bunch - Chat.png" alt="">
+    <div class="w-[400px] p-[40px] rounded-[20px] bg-white">
+        <input id="phone" type="number" placeholder="Enter Your Phone Number" class="w-full p-[10px] rounded-[10px] outline-none border-[2px] border-slate-900">
+        <p id="num_error" class="text-red-600 text-sm mt-3"></p>
+        <input id="pin" type="number" placeholder="PIN" class="w-full p-[10px] mt-[20px] rounded-[10px] border-[2px] outline-none border-slate-900">
+        <p id="pin_error" class="text-red-600 text-sm mt-3"></p>
+        <button id="logBtn" class="w-full p-[10px] mt-[20px] rounded-[10px] bg-purple-950 text-white transform hover:bg-white hover:text-purple-950 hover:border-[2px] hover:border-purple-950 font-bold duration-500"> Log In</button>
+
+    </div>
+    
+
+
+    <script src="./js/login.js"></script>
+</body>
+</html>

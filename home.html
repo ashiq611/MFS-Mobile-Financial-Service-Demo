@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash</title>
+    <link rel="stylesheet" href="./output/tailwind.css">
+</head>
+<style>
+  .cross{
+    color: aliceblue;
+    background: black;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 50%;
+
+  }
+</style>
+<body class="bg-slate-200">
+    <div class="container mx-auto relative">
+      <h2 class="bg-yellow-400 p-5"><span class="w-5 h-5 bg-red-600 rounded-full me-5 p-2">!</span>pin: 1234 <span class="w-5 h-5 bg-indigo-600 rounded-full me-5 p-2">Testing</span></h2>
+
+      <!-- notification -->
+      <div id="notification_space" class="m-4 p-2 bg-slate-600 rounded-lg flex justify-start flex-wrap">
+
+      </div>
+
+  
+        <div id="cashout-pin" class="bg-slate-600 p-4 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 rounded-lg hidden ">
+          <button id="pin_cross" class=" p-2 text-red-700 bg-white rounded-xl">X</button>
+          <form id="cashInForm" class="space-y-4">
+            <div class="flex flex-col">
+              <h2 class="text-white text-lg font-semibold mb-2">Confirm your Pin</h2>
+              <label for="amount" class="text-sm text-gray-600">Enter Amount</label>
+              <input type="number" id="cash_out_amount_pin" name="amount" class="border rounded-md px-3 py-2 mt-1 focus:ring focus:ring-blue-300">
+            </div>
+            <button type="submit" id="btn_cashOut_pin" class="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 transition">Confirm Pin</button>
+          </form>
+        </div>
+      
+
+
+<!-- total ballance -->
+        <div class="flex justify-evenly flex-wrap mt-6">
+            <div class="bg-white shadow-md rounded-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Total Balance</h2>
+                <div class="flex items-center">
+                  <span class="text-2xl font-semibold text-green-500">$</span>
+                  <p id="total_balance" class="text-4xl font-bold ml-1">00.00</p>
+                </div>
+              </div>
+
+
+              
+              
+        </div>
+
+        <!-- cash in -->
+
+        <div class="md:flex justify-between flex-wrap mt-6">
+          <div class="bg-white shadow-md rounded-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Cash In</h2>
+                <form id="cashInForm" class="space-y-4" >
+                  <div class="flex flex-col">
+                    <label for="amount" class="text-sm text-gray-600">Enter Amount</label>
+                    <input type="number" id="cash_in_amount" name="amount" class="border rounded-md px-3 py-2 mt-1 focus:ring focus:ring-blue-300">
+                  </div>
+                  <button type="submit" id="btn_cashIn" class="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 transition">In</button>
+                </form>
+              </div>
+
+
+              <!-- cash out -->
+              <div class="bg-white shadow-md rounded-md p-6">
+                <h2 class="text-lg font-semibold mb-4">Cash Out</h2>
+                <form id="cashInForm" class="space-y-4">
+                  <div class="flex flex-col">
+                    <label for="amount" class="text-sm text-gray-600">Enter Amount</label>
+                    <input type="number" id="cash_out_amount" id="amount" name="amount" class="border rounded-md px-3 py-2 mt-1 focus:ring focus:ring-blue-300">
+                  </div>
+                  <button type="submit" id="btn_cashOut" class="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 transition">Out</button>
+                </form>
+              </div>
+
+
+              <!-- mobile recharge -->
+
+            <div class="text-center bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-semibold mb-4">Mobile Recharge</h1>
+    <form id="rechargeForm">
+      <div class="mb-4">
+        <label for="operator" class="block text-sm font-medium text-gray-700">Select Operator:</label>
+        <select id="operator" name="operator" class="mt-1 p-2 border rounded-lg">
+          <option value="gp">Grameenphone (GP)</option>
+          <option value="robi">Robi</option>
+          <option value="banglalink">Banglalink</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="number" class="block text-sm font-medium text-gray-700">Enter Mobile Number:</label>
+        <input type="text" id="number" name="number" class="mt-1 p-2 border rounded-lg" required>
+      </div>
+      <div class="mb-4">
+        <label for="amount" class="block text-sm font-medium text-gray-700">Enter Amount (Taka):</label>
+        <input type="number" id="amount" name="amount" class="mt-1 p-2 border rounded-lg" min="10" max="1000" required>
+      </div>
+      <button type="button" id="submitBtn" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600">Recharge</button>
+    </form>
+  </div>
+
+   <!-- bill recharge -->
+<!-- 
+   <div class="w-1/3 bg-white p-6 rounded-lg shadow-md mt-6">
+    <h1 class="text-2xl font-semibold mb-4">Mobile Recharge</h1>
+    <form id="rechargeForm">
+      <div class="mb-4">
+        <label for="operator" class="block text-sm font-medium text-gray-700">Select Operator:</label>
+        <select id="operator" name="operator" class="mt-1 p-2 border rounded-lg">
+          <option value="gp">Grameenphone (GP)</option>
+          <option value="robi">Robi</option>
+          <option value="banglalink">Banglalink</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label for="number" class="block text-sm font-medium text-gray-700">Enter Mobile Number:</label>
+        <input type="text" id="number" name="number" class="mt-1 p-2 border rounded-lg" required>
+      </div>
+      <div class="mb-4">
+        <label for="amount" class="block text-sm font-medium text-gray-700">Enter Amount (Taka):</label>
+        <input type="number" id="amount" name="amount" class="mt-1 p-2 border rounded-lg" min="10" max="1000" required>
+      </div>
+      <button type="button" id="submitBtn" class="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600">Recharge</button>
+    </form>
+  </div> -->
+
+  <!-- bill -->
+
+        </div>
+
+        
+
+        <!-- history -->
+
+        <h2 class="p-2 mt-4 text-white text-center bg-slate-600 rounded-lg">history</h2>
+
+        <div id="history" class=" flex justify-evenly mt-6 flex-wrap">
+          
+            
+
+              
+        </div>
+    </div>
+
+    <script src="./js/home.js"></script>
+</body>
+</html>
